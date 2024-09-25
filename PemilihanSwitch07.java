@@ -27,10 +27,12 @@ public class PemilihanSwitch07 {
                 hasil = angka1 / angka2;
                 break;
             default:
-                break;
+                System.out.println("Masukkan operator yang benar!");
         }
-
+        sc.close();
+        if (operator == '-' || operator == '+' || operator == '*' || operator == '/') {
+        System.out.println(angka1 + operator + angka2 + " = " + hasil);
         System.out.println(angka1 + " " + operator + " " + angka2 + " = " + hasil);
-        
+        }
     }
 }
