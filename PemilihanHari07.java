@@ -1,31 +1,23 @@
-import java.lang.classfile.instruction.SwitchCase;
 import java.util.Scanner;
+
 public class PemilihanHari07 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
-        String dayName, dayType;
-        System.out.println("Input day name");
-        dayName = sc.nextLine();
-
-        switch (dayName.toLowerCase()) {
-            case "monday":
-            case "tuesday":
-            case "wednesday":
-            case "thursday":
-            case "friday":
-                dayType = "weekday";
-                break;
-            case "saturday":
-            case "sunday":
-                dayType = "weekend";
-                break;
-            default:
-                dayType = "invalid day name";
-                break;
+        Scanner input = new Input(System.in);
+        String dayType;
+        byte dayNumber;
+        System.out.println("Masukkan angka 1 sampai 7");
+        System.out.print("Masukkan : ");
+        dayNumber = input.nextByte();
+        input.close(); 
+        dayType = "";
+        if (dayNumber >= 1 && dayNumber <= 5) {
+            dayType = "Hari Produktif";
+        }  else if (dayNumber == 6 || dayNumber == 7) {
+            dayType = "Hari Libur";
+        } else {
+            dayType = "Angka yang salah";
         }
-
-        System.out.println(dayName + "is a" + dayType);
+        System.out.println(dayNumber + "adalah" + dayType);
     }
     
 }
